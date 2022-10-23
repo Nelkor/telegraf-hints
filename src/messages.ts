@@ -1,10 +1,12 @@
-export const helpMessage = [
+const wrap = (arr: string[]) => arr.join('\n')
+
+export const helpMessage = wrap([
   '/start — перезапустить бота',
   '/help — помощь',
   '/buttons — посмотреть кнопки',
-].join('\n')
+])
 
-export const buttonsMessage = [
+export const buttonsMessage = wrap([
   '<b>Заголовок сообщения</b>',
   '',
   'Обычный текст сообщения. Он <i>может</i> быть довольно <u>длинным</u>,' +
@@ -12,4 +14,9 @@ export const buttonsMessage = [
   '',
   '<code>Нажми и скопируй</code>',
   '<a href="https://aviata.nelkor.kz">Сайт</a>',
-].join('\n')
+])
+
+export const firstActionMessage = wrap([
+  'Зафиксировано успешное нажатие на первую кнопку!',
+  'https://youtube.com',
+])

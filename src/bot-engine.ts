@@ -1,6 +1,6 @@
 import { Telegraf } from 'telegraf'
 
-import { helpMessage, buttonsMessage } from '@/messages'
+import { helpMessage, buttonsMessage, firstActionMessage } from '@/messages'
 import { buttonsMarkup } from '@/markups'
 import { getNameByUser } from '@/helpers'
 
@@ -15,6 +15,14 @@ export const setBot = (bot: Telegraf) => {
   bot.command('buttons', ctx =>
     ctx.replyWithHTML(buttonsMessage, buttonsMarkup)
   )
+
+  bot.action('btn-1', ctx => {
+    ctx
+      .reply(firstActionMessage, {
+        ['disable_web_page_preview']: true,
+      })
+      .then(() => ctx.answerCbQuery())
+  })
 
   bot.help(ctx => ctx.reply(helpMessage))
   bot.launch().then()
