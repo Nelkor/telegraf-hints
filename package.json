@@ -19,6 +19,7 @@
     "@typescript-eslint/parser": "^5.21.0",
     "babel-jest": "^28.0.2",
     "babel-loader": "^8.2.5",
+    "copy-webpack-plugin": "^11.0.0",
     "eslint": "^8.14.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^2.7.1",

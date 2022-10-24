@@ -1,5 +1,7 @@
 import { resolve } from 'path'
 
+import CopyPlugin from 'copy-webpack-plugin'
+
 import { alias } from './dev-helpers/alias'
 import { externals } from './dev-helpers/dependencies'
 
@@ -29,4 +31,14 @@ export default {
       },
     ],
   },
+  plugins: [
+    new CopyPlugin({
+      patterns: [
+        {
+          from: resolve('img'),
+          to: resolve('dist/img'),
+        },
+      ],
+    }),
+  ],
 }

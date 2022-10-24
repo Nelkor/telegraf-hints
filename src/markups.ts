@@ -7,10 +7,12 @@ const createButton = (text: string, data: string) =>
 export const buttonsMarkup: Markup.Markup<InlineKeyboardMarkup> =
   Markup.inlineKeyboard([
     [createButton('Первая', 'btn-1'), createButton('Вторая', 'btn-2')],
-    [createButton('Третья', 'btn-3')],
+    [Markup.button.webApp('Третья', 'https://ya.ru')],
     [
       createButton('Четвёртая', 'btn-4'),
       createButton('Пятая', 'btn-5'),
       createButton('Шестая', 'btn-6'),
     ],
   ])
+
+export const keyboard = Markup.keyboard([['Печенюшка', 'Колокольчик']])
