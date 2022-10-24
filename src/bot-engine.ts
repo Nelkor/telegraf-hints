@@ -24,6 +24,12 @@ export const setBot = (bot: Telegraf) => {
       .then(() => ctx.answerCbQuery())
   })
 
+  bot.action('btn-2', ctx => {
+    ctx
+      .replyWithPhoto({ source: './img/ibra.jpg' }, { caption: 'Ибрагим' })
+      .then(() => ctx.answerCbQuery())
+  })
+
   bot.help(ctx => ctx.reply(helpMessage))
   bot.launch().then()
 }
